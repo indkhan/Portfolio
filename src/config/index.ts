@@ -83,9 +83,9 @@ export const SITE_CONTENT: SiteContent = {
     {
       name: "Voice Oasis",
       summary:
-        "A real-time voice enhancement and conversational memory system with speaker recognition, designed under strict latency and privacy constraints.",
+        "Hackathon-winning real-time voice enhancement and conversational memory system with speaker recognition, designed under strict latency and privacy constraints.",
       linkPreview: "",
-      linkSource: "https://github.com/indkhan/voice-oasis",
+      linkSource: "https://github.com/indkhan/Voice_Oasis",
       image: "/projects/voice-oasis.png",
     },
     {

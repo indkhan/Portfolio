@@ -62,7 +62,7 @@ export const SITE_CONTENT: SiteContent = {
         "A fast, RAG-first AI chat platform inspired by t3.chat, built for document and YouTube-based knowledge retrieval with a strong focus on latency and UX.",
       linkPreview: "https://context-one-opal.vercel.app",
       linkSource: "https://github.com/indkhan/context",
-      image: "/projects/context.png",
+      image: "/context.png",
     },
     {
       name: "CourseVault",
@@ -70,7 +70,7 @@ export const SITE_CONTENT: SiteContent = {
         "A full-stack platform for university students to discover, share, and rank study resources, deployed on Vercel as a complete production system.",
       linkPreview: "https://course-vault.vercel.app/",
       linkSource: "https://github.com/indkhan/CourseVault",
-      image: "/projects/coursevault.png",
+      image: "/coursevault.png",
     },
     {
       name: "Klebl",
@@ -78,7 +78,7 @@ export const SITE_CONTENT: SiteContent = {
         "Hackathon-winning AI system for automated architectural blueprint analysis using YOLOv11 and Gemini, reducing manual review time by ~90%.",
       linkPreview: "",
       linkSource: "https://github.com/indkhan/klebl",
-      image: "/projects/klebl.png",
+      image: "/klebl.png",
     },
     {
       name: "Voice Oasis",
@@ -86,7 +86,7 @@ export const SITE_CONTENT: SiteContent = {
         "Hackathon-winning real-time voice enhancement and conversational memory system with speaker recognition, designed under strict latency and privacy constraints.",
       linkPreview: "",
       linkSource: "https://github.com/indkhan/Voice_Oasis",
-      image: "/projects/voice-oasis.png",
+      image: "/voice_oasis.png",
     },
     {
       name: "Offline_AI",
@@ -94,7 +94,7 @@ export const SITE_CONTENT: SiteContent = {
         "An offline-first Android application enabling on-device LLM inference and agent workflows, focused on privacy, reliability, and low-latency execution.",
       linkPreview: "",
       linkSource: "https://github.com/indkhan/Offline_AI",
-      image: "/projects/offline-ai.png",
+      image: "/offline_ai.png",
     },
     {
       name: "MHack",
@@ -102,7 +102,7 @@ export const SITE_CONTENT: SiteContent = {
         "A desktop AI assistant capable of browsing, code execution, and task automation through agent-based tool orchestration.",
       linkPreview: "",
       linkSource: "https://github.com/indkhan/MHack",
-      image: "/projects/mhack.png",
+      image: "/mhack.png",
     },
   ],
 

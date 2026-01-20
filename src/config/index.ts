@@ -61,7 +61,7 @@ export const SITE_CONTENT: SiteContent = {
       summary:
         "A fast, RAG-first AI chat platform inspired by t3.chat, built for document and YouTube-based knowledge retrieval with a strong focus on latency and UX.",
       linkPreview: "https://context-one-opal.vercel.app",
-      linkSource: "https://github.com/indkhan/context",
+      linkSource: "",
       image: "/context.png",
     },
     {
@@ -69,7 +69,7 @@ export const SITE_CONTENT: SiteContent = {
       summary:
         "A full-stack platform for university students to discover, share, and rank study resources, deployed on Vercel as a complete production system.",
       linkPreview: "https://course-vault.vercel.app/",
-      linkSource: "https://github.com/indkhan/CourseVault",
+      linkSource: "",
       image: "/coursevault.png",
     },
     {

@@ -19,20 +19,25 @@ const { projects } = Astro.props;
           style={`top: ${top}px;`}
           class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black"
         >
-          <div class="bg-difu relative z-[1] grid h-[580px] w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
-            <div class="px-6 pt-12">
-              <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
-                {name}
-              </h3>
-              <p class="text-base text-neutral">{summary}</p>
-              <div class="flex gap-5 pt-10 text-white">
+          <div class="bg-difu relative z-[1] grid min-h-[580px] w-full grid-rows-[1fr_280px] rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:min-h-0 sm:grid-cols-2 sm:grid-rows-1 md:h-96">
+            <div class="flex flex-col justify-between px-6 py-10 sm:py-12">
+              <div>
+                <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
+                  {name}
+                </h3>
+                <p class="text-base text-neutral">{summary}</p>
+              </div>
+              <div class="flex gap-5 pt-8 text-white">
                 {
                   linkSource && (
                     <a
                       href={linkSource}
                       target="_blank"
-                      class="after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
+                      class="flex items-center gap-2 rounded-lg bg-white/5 px-4 py-2 text-sm transition-colors hover:bg-white/10 active:scale-95 sm:bg-transparent sm:p-0 sm:text-base sm:after:relative sm:after:bottom-[-5px] sm:after:content-[url(/external.svg)] sm:hover:bg-transparent sm:hover:underline"
                     >
+                      <span class="sm:hidden">
+                        <img src="/external.svg" alt="" class="h-4 w-4 invert" />
+                      </span>
                       Source
                     </a>
                   )
@@ -42,8 +47,11 @@ const { projects } = Astro.props;
                     <a
                       href={linkPreview}
                       target="_blank"
-                      class="after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
+                      class="flex items-center gap-2 rounded-lg bg-white/5 px-4 py-2 text-sm transition-colors hover:bg-white/10 active:scale-95 sm:bg-transparent sm:p-0 sm:text-base sm:after:relative sm:after:bottom-[-5px] sm:after:content-[url(/external.svg)] sm:hover:bg-transparent sm:hover:underline"
                     >
+                      <span class="sm:hidden">
+                        <img src="/external.svg" alt="" class="h-4 w-4 invert" />
+                      </span>
                       Preview
                     </a>
                   )
@@ -52,7 +60,7 @@ const { projects } = Astro.props;
             </div>
             <div class="flex items-end justify-end overflow-hidden">
               <Image
-                class="h-full w-[95%] rounded-ss-xl rounded-ee-2xl object-none object-left-top sm:h-[85%] sm:w-full"
+                class="h-full w-[95%] rounded-ss-xl rounded-ee-2xl object-cover object-left-top sm:h-[85%] sm:w-full sm:object-none"
                 src={image}
                 alt={name}
                 width="736"

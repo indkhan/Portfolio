@@ -73,6 +73,19 @@ export const SITE_CONTENT: SiteContent = {
       image: "/coursevault.png",
     },
     {
+      name: "SwissInsight",
+      summary: "Natural language query system for Swiss startup data using SPARQL and semantic search",
+      linkPreview: "https://innosuisse-startupticker-dp5myu4aawkhwuopq74ev9.streamlit.app/",
+      linkSource: "https://github.com/indkhan/innosuisse-startupticker",
+      image: "/swiss.png",
+    },
+    {
+      name: "DreamTransport",
+      summary: "Public transport optimization system for Neumarkt i.d. OPf. to improve bus routes and stops using passenger data, punctuality analysis, and mathematical optimization algorithms.",
+      linkSource: "https://github.com/indkhan/DreamTransport",
+      image: "/dream_transport.gif",
+    },
+    {
       name: "Klebl",
       summary:
         "Hackathon-winning AI system for automated architectural blueprint analysis using YOLOv11 and Gemini, reducing manual review time by ~90%.",

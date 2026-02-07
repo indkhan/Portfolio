@@ -27,6 +27,7 @@ export const SITE_CONTENT: SiteContent = {
     summary:
       "I build real-world software products — from intelligent AI systems and RAG pipelines to scalable full-stack applications designed for production use.",
     email: "mgsukhan@gmail.com",
+    phone: "+49 176 26810749",
   },
 
   experience: [

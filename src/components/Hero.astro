@@ -2,7 +2,7 @@
 import type { HeroProps } from "@types";
 type Props = HeroProps;
 
-const { name, specialty, summary, email } = Astro.props;
+const { name, specialty, summary, email, phone } = Astro.props;
 ---
 
 <section class="py-24 md:py-32" id="#hero">
@@ -20,8 +20,20 @@ const { name, specialty, summary, email } = Astro.props;
     {summary}
   </p>
 
-  <a
-    class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-[#fff]"
-    href={`mailto:${email}`}>Get in Touch</a
-  >
+  <div class="flex flex-wrap gap-4">
+    <a
+      class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-[#fff]"
+      href={`mailto:${email}`}>Email Me</a
+    >
+    {
+      phone && (
+        <a
+          class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-[#fff]"
+          href={`tel:${phone.replace(/\s+/g, "")}`}
+        >
+          Call Me
+        </a>
+      )
+    }
+  </div>
 </section>

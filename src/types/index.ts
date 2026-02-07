@@ -19,6 +19,7 @@ export interface HeroProps {
   specialty: string;
   summary: string;
   email: string;
+  phone?: string;
 }
 
 export interface ExperienceProps {

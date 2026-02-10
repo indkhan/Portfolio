@@ -13,14 +13,16 @@ const { projects } = Astro.props;
 <Section text="Featured Projects" href="projects">
   {
     projects.map(({ name, summary, image, linkPreview, linkSource }, index) => {
-      const top = 98 + index * 40;
+      // Reduced offset to 10px to prevent the stack from taking too much space
+      const top = 100 + index * 10;
+      const zIndex = index + 1;
       return (
         <div
-          style={`top: ${top}px;`}
-          class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black"
+          style={`top: ${top}px; z-index: ${zIndex};`}
+          class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black transition-all duration-500 ease-out"
         >
           <div class="bg-difu relative z-[1] flex flex-col rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid sm:min-h-0 sm:grid-cols-2 sm:grid-rows-1 md:h-96">
-            <div class="flex shrink-0 flex-col px-6 pb-6 pt-10 sm:justify-between sm:py-12">
+            <div class="flex shrink-0 flex-col px-6 pt-10 pb-6 sm:justify-between sm:py-12">
               <div>
                 <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
                   {name}
@@ -28,34 +30,30 @@ const { projects } = Astro.props;
                 <p class="text-base text-neutral">{summary}</p>
               </div>
               <div class="flex gap-5 pt-8 text-white">
-                {
-                  linkSource && (
-                    <a
-                      href={linkSource}
-                      target="_blank"
-                      class="flex items-center gap-2 rounded-lg bg-white/5 px-4 py-2 text-sm transition-colors hover:bg-white/10 active:scale-95 sm:bg-transparent sm:p-0 sm:text-base sm:after:relative sm:after:bottom-[-5px] sm:after:content-[url(/external.svg)] sm:hover:bg-transparent sm:hover:underline"
-                    >
-                      <span class="sm:hidden">
-                        <img src="/external.svg" alt="" class="h-4 w-4 invert" />
-                      </span>
-                      Source
-                    </a>
-                  )
-                }
-                {
-                  linkPreview && (
-                    <a
-                      href={linkPreview}
-                      target="_blank"
-                      class="flex items-center gap-2 rounded-lg bg-white/5 px-4 py-2 text-sm transition-colors hover:bg-white/10 active:scale-95 sm:bg-transparent sm:p-0 sm:text-base sm:after:relative sm:after:bottom-[-5px] sm:after:content-[url(/external.svg)] sm:hover:bg-transparent sm:hover:underline"
-                    >
-                      <span class="sm:hidden">
-                        <img src="/external.svg" alt="" class="h-4 w-4 invert" />
-                      </span>
-                      Preview
-                    </a>
-                  )
-                }
+                {linkSource && (
+                  <a
+                    href={linkSource}
+                    target="_blank"
+                    class="flex items-center gap-2 rounded-lg bg-white/5 px-4 py-2 text-sm transition-colors hover:bg-white/10 active:scale-95 sm:bg-transparent sm:p-0 sm:text-base sm:after:relative sm:after:bottom-[-5px] sm:after:content-[url(/external.svg)] sm:hover:bg-transparent sm:hover:underline"
+                  >
+                    <span class="sm:hidden">
+                      <img src="/external.svg" alt="" class="h-4 w-4 invert" />
+                    </span>
+                    Source
+                  </a>
+                )}
+                {linkPreview && (
+                  <a
+                    href={linkPreview}
+                    target="_blank"
+                    class="flex items-center gap-2 rounded-lg bg-white/5 px-4 py-2 text-sm transition-colors hover:bg-white/10 active:scale-95 sm:bg-transparent sm:p-0 sm:text-base sm:after:relative sm:after:bottom-[-5px] sm:after:content-[url(/external.svg)] sm:hover:bg-transparent sm:hover:underline"
+                  >
+                    <span class="sm:hidden">
+                      <img src="/external.svg" alt="" class="h-4 w-4 invert" />
+                    </span>
+                    Preview
+                  </a>
+                )}
               </div>
             </div>
             <div class="flex h-[200px] items-end justify-end overflow-hidden sm:h-auto">

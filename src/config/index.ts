@@ -125,7 +125,7 @@ export const SITE_CONTENT: SiteContent = {
       location: "Neumarkt in der Oberpfalz, Germany",
       summary: "Klebl GmbH challenge. Hackathon-winning AI system for automated architectural blueprint analysis using YOLOv11 and Gemini, reducing manual review time by ~90%.",
       rank: "Winner (1st Place)",
-      images: ["/klebl.png"],
+      images: ["/klebl.png", "/klebl.png", "/klebl.png"],
       link: "https://github.com/indkhan/klebl",
     },
     {
@@ -133,7 +133,7 @@ export const SITE_CONTENT: SiteContent = {
       location: "St. Gallen, Switzerland",
       summary: "Biggest one I've ever attended. Co-developed VoiceOasis, a real-time, privacy-focused voice AI for robotics featuring speaker recognition and conversational memory.",
       rank: "3rd Place",
-      images: ["/voice_oasis.png"],
+      images: ["/voice_oasis.png", "/voice_oasis.png"],
       link: "https://github.com/indkhan/Voice_Oasis",
     },
     {
@@ -141,7 +141,7 @@ export const SITE_CONTENT: SiteContent = {
       location: "Neumarkt in der Oberpfalz, Germany",
       summary: "DreamTransport: Optimization system for Neumarkt i.d. OPf. to improve bus routes using passenger data, punctuality analysis, and mathematical algorithms.",
       rank: "2nd Place",
-      images: ["/dream_transport.gif"],
+      images: ["/dream_transport.gif", "/dream_transport.gif", "/dream_transport.gif"],
       link: "https://github.com/indkhan/DreamTransport",
     },
   ],

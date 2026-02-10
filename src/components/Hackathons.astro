@@ -1,0 +1,124 @@
+---
+import Section from "./Section.astro";
+import { Image } from "astro:assets";
+import type { HackathonProps } from "@types";
+
+interface Props {
+    hackathons: HackathonProps[];
+}
+
+const { hackathons } = Astro.props;
+---
+
+<Section text="Hackathons" href="hackathons">
+    {
+        hackathons.map(
+            (
+                { name, location, summary, rank, images, link, preview },
+                index,
+            ) => {
+                const topDesktop = 98 + index * 40;
+                const zIndex = index + 1;
+                const safeImages = (Array.isArray(images) ? images : []).slice(
+                    0,
+                    3,
+                );
+
+                return (
+                    <div
+                        style={`--i: ${index}; --card-top-desktop: ${topDesktop}px; z-index: ${zIndex};`}
+                        class="sticky top-[calc(88px+min(var(--i)*12px,25vh))] mb-12 rounded-2xl border border-neutral/20 bg-black sm:top-[var(--card-top-desktop)]"
+                    >
+                        <div
+                            style="-webkit-overflow-scrolling: touch;"
+                            class="bg-difu relative z-[1] flex h-[calc(100dvh-140px)] touch-pan-y flex-col overflow-y-scroll rounded-2xl bg-[#1c232d] before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid sm:h-auto sm:min-h-0 sm:touch-auto sm:grid-cols-2 sm:grid-rows-1 sm:overflow-visible sm:bg-[#1c232d]/85 md:h-96"
+                        >
+                            <div class="flex shrink-0 flex-col px-6 pt-10 pb-6 sm:justify-between sm:py-12">
+                                <div>
+                                    <h3 class="mb-2 font-serif text-3xl font-medium text-primary">
+                                        {name}
+                                    </h3>
+                                    <div class="mb-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-white/70">
+                                        <span>{location}</span>
+                                        {rank && (
+                                            <span class="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white">
+                                                {rank}
+                                            </span>
+                                        )}
+                                    </div>
+                                    <p class="text-base text-neutral">
+                                        {summary}
+                                    </p>
+                                    {(link || preview) && (
+                                        <div class="flex flex-wrap gap-3 pt-6">
+                                            {preview && (
+                                                <a
+                                                    href={preview}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    class="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-xs font-medium text-white transition-colors hover:bg-primary/90 active:scale-95"
+                                                >
+                                                    <img
+                                                        src="/external.svg"
+                                                        alt=""
+                                                        class="h-4 w-4 invert"
+                                                    />
+                                                    Preview
+                                                </a>
+                                            )}
+                                            {link && (
+                                                <a
+                                                    href={link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    class="inline-flex items-center gap-2 rounded-full border border-primary bg-transparent px-5 py-3 text-xs font-medium text-white transition-colors hover:bg-primary/10 active:scale-95"
+                                                >
+                                                    Project
+                                                </a>
+                                            )}
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-3 p-4 sm:h-auto sm:items-end sm:justify-end sm:overflow-hidden sm:p-0">
+                                {safeImages.length === 1 && (
+                                    <Image
+                                        class="w-full rounded-xl object-contain sm:h-[85%] sm:w-full sm:rounded-ss-xl sm:rounded-ee-2xl sm:object-none sm:object-left-top"
+                                        src={safeImages[0]}
+                                        alt={name}
+                                        width="736"
+                                        height="483"
+                                    />
+                                )}
+
+                                {safeImages.length > 1 && (
+                                    <div class="grid w-full grid-cols-1 gap-3 sm:h-full sm:w-full sm:grid-cols-2 sm:gap-3 sm:p-4">
+                                        {safeImages.map((img, imgIndex) => (
+                                            <div
+                                                class={
+                                                    imgIndex === 0 &&
+                                                    safeImages.length === 3
+                                                        ? "sm:col-span-2"
+                                                        : "col-span-1"
+                                                }
+                                            >
+                                                <Image
+                                                    class="h-auto w-full rounded-xl object-cover"
+                                                    src={img}
+                                                    alt={name}
+                                                    width="736"
+                                                    height="483"
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                );
+            },
+        )
+    }
+</Section>

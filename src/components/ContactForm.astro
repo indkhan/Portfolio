@@ -1,0 +1,179 @@
+---
+import Section from "./Section.astro";
+
+interface Props {
+    email: string;
+}
+
+const { email } = Astro.props;
+---
+
+<Section text="Contact" href="contact">
+    <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        class="mx-auto max-w-2xl"
+    >
+        <input
+            type="hidden"
+            name="access_key"
+            value="2d4e602c-4021-4aa6-bf4b-ef9c30328a33"
+        />
+        <input type="hidden" name="to" value={email} />
+        <input
+            type="hidden"
+            name="subject"
+            value="New Contact Form Submission"
+        />
+        <input type="hidden" name="from_name" value="Portfolio Contact Form" />
+
+        <div class="grid gap-6 sm:grid-cols-2">
+            <div class="flex flex-col gap-2">
+                <label for="firstName" class="text-sm font-medium text-neutral">
+                    First Name <span class="text-primary">*</span>
+                </label>
+                <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    required
+                    placeholder="Usman"
+                    class="rounded-lg border border-neutral/20 bg-black/50 px-4 py-3 text-white placeholder-neutral/50 transition-colors outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                />
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label for="lastName" class="text-sm font-medium text-neutral">
+                    Last Name <span class="text-primary">*</span>
+                </label>
+                <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    required
+                    placeholder="Khan"
+                    class="rounded-lg border border-neutral/20 bg-black/50 px-4 py-3 text-white placeholder-neutral/50 transition-colors outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                />
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label for="email" class="text-sm font-medium text-neutral">
+                    Email <span class="text-primary">*</span>
+                </label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="mgsukhan@gmail.com"
+                    class="rounded-lg border border-neutral/20 bg-black/50 px-4 py-3 text-white placeholder-neutral/50 transition-colors outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                />
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label for="phone" class="text-sm font-medium text-neutral">
+                    Phone Number
+                </label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+49 176 26810749"
+                    class="rounded-lg border border-neutral/20 bg-black/50 px-4 py-3 text-white placeholder-neutral/50 transition-colors outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                />
+            </div>
+        </div>
+
+        <div class="mt-6 flex flex-col gap-2">
+            <label for="message" class="text-sm font-medium text-neutral">
+                Message <span class="text-primary">*</span>
+            </label>
+            <textarea
+                id="message"
+                name="message"
+                required
+                rows="5"
+                placeholder="Your message here..."
+                class="resize-none rounded-lg border border-neutral/20 bg-black/50 px-4 py-3 text-white placeholder-neutral/50 transition-colors outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+            ></textarea>
+        </div>
+
+        <div class="mt-8">
+            <button
+                type="submit"
+                class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-medium text-white transition-all hover:bg-primary/90 active:scale-95"
+            >
+                Send Message
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </div>
+
+        <div id="form-result" class="mt-4 hidden text-sm"></div>
+    </form>
+</Section>
+
+<style>
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus {
+        -webkit-text-fill-color: white !important;
+        background-color: rgba(0, 0, 0, 0.5) !important;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+
+    input:-webkit-autofill::first-line,
+    textarea:-webkit-autofill::first-line {
+        color: white !important;
+    }
+</style>
+
+<script>
+    const form = document.querySelector("form") as HTMLFormElement;
+    const result = document.getElementById("form-result") as HTMLDivElement;
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: formData,
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                result.className = "mt-4 text-sm text-green-400";
+                result.textContent =
+                    "Thank you! Your message has been sent successfully.";
+                result.classList.remove("hidden");
+                form.reset();
+            } else {
+                result.className = "mt-4 text-sm text-red-400";
+                result.textContent = "Something went wrong. Please try again.";
+                result.classList.remove("hidden");
+            }
+        } catch {
+            result.className = "mt-4 text-sm text-red-400";
+            result.textContent = "Something went wrong. Please try again.";
+            result.classList.remove("hidden");
+        }
+    });
+</script>

@@ -136,7 +136,7 @@ export const SITE_CONTENT: SiteContent = {
       summary: "Built UdS OP (Universal Desktop Assistant). AI assistant capable of code execution, file operations, browsing, and searches.",
       rank: "3rd Place",
       images: ["/munichhack.jpeg"],
-      link: "https://github.com/indkhan/UdS_Operator",
+      link: "https://github.com/indkhan/MHack",
     },
     {
       name: "START HACK 2025",

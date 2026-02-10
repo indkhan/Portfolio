@@ -111,23 +111,44 @@ const { hackathons } = Astro.props;
                             </div>
 
                             {/* Image Side */}
-                            <div class="flex h-[300px] w-full items-end justify-end overflow-hidden p-4 sm:h-auto sm:items-center sm:justify-center">
+                            <div class="flex w-full items-center justify-center p-4 sm:h-auto">
                                 {hasImages && (
                                     <div
-                                        class={`grid h-full w-full gap-2 ${displayImages.length === 1 ? "grid-cols-1" : displayImages.length === 2 ? "grid-cols-2" : "grid-cols-2 grid-rows-2"}`}
+                                        class={`grid w-full gap-2 ${
+                                            displayImages.length === 1
+                                                ? "grid-cols-1"
+                                                : displayImages.length === 2
+                                                  ? "grid-cols-1 sm:grid-cols-2"
+                                                  : "grid-cols-1 sm:grid-cols-2 sm:grid-rows-2"
+                                        }`}
                                     >
                                         {displayImages.map((img, imgIndex) => {
                                             let gridClass =
-                                                "overflow-hidden rounded-xl shadow-lg";
+                                                "overflow-hidden rounded-xl shadow-lg relative min-h-[200px] sm:min-h-0";
 
-                                            // Logic for 3 images: One main, two stacked
+                                            // 3 Images Layout:
+                                            // Mobile: Stacked (via grid-cols-1 above)
+                                            // Desktop: Top one full width, Bottom two split
                                             if (displayImages.length === 3) {
-                                                if (imgIndex === 0)
+                                                if (imgIndex === 0) {
                                                     gridClass +=
-                                                        " row-span-2 md:col-span-1";
-                                                else gridClass += " col-span-1";
-                                            } else {
-                                                gridClass += " col-span-1"; // Just fill available space
+                                                        " sm:col-span-2 sm:row-span-1";
+                                                } else {
+                                                    gridClass +=
+                                                        " sm:col-span-1 sm:row-span-1";
+                                                }
+                                            }
+                                            // 2 Images Layout:
+                                            // Desktop: Side by side (col-span-1 each)
+                                            else if (
+                                                displayImages.length === 2
+                                            ) {
+                                                gridClass += " sm:col-span-1";
+                                            }
+                                            // 1 Image:
+                                            else {
+                                                gridClass +=
+                                                    " h-[300px] sm:h-full";
                                             }
 
                                             return (

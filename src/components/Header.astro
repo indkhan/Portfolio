@@ -69,38 +69,35 @@ const { siteLogo, navLinks } = Astro.props;
     item?.addEventListener("click", toggleMenu);
   });
 
-  // Update navigation based on scroll position with Intersection Observer
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navItems.forEach((item) => {
-            if (item.getAttribute("href") === `#${entry.target.id}`) {
-              item.classList.add("text-white", "md:after:opacity-100");
-            } else {
-              item.classList.remove("text-white", "md:after:opacity-100");
-            }
-          });
-        }
-      });
-    },
-    { threshold: 0.5 },
-  );
+  // Function to update active link
+  const updateActiveLink = () => {
+    const sections = document.querySelectorAll("section");
+    const scrollPosition = window.scrollY + window.innerHeight / 3;
 
-  document.querySelectorAll("section").forEach((section) => {
-    observer.observe(section);
-  });
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute("id");
 
-  // Cleanup observer
-  document.onvisibilitychange = () => {
-    if (document.visibilityState === "hidden") {
-      observer.disconnect();
-    } else {
-      document.querySelectorAll("section").forEach((section) => {
-        observer.observe(section);
-      });
-    }
+      if (
+        scrollPosition >= sectionTop &&
+        scrollPosition < sectionTop + sectionHeight
+      ) {
+        navItems.forEach((item) => {
+          if (item.getAttribute("href") === `#${sectionId}`) {
+            item.classList.add("text-white", "md:after:opacity-100");
+          } else {
+            item.classList.remove("text-white", "md:after:opacity-100");
+          }
+        });
+      }
+    });
   };
+
+  // Listen for scroll events
+  window.addEventListener("scroll", updateActiveLink);
+  // Initial check
+  updateActiveLink();
 </script>
 
 <style>

@@ -11,186 +11,144 @@ const { hackathons } = Astro.props;
 ---
 
 <Section text="Hackathons" href="hackathons">
-    <div class="flex flex-col gap-12">
-        {
-            hackathons.map(
-                (
-                    { name, location, summary, rank, images, link, preview },
-                    index,
-                ) => {
-                    // Sticky offset logic: subtle stacking
-                    const top = 120 + index * 20;
+    {
+        hackathons.map(
+            (
+                { name, location, summary, rank, images, link, preview },
+                index,
+            ) => {
+                // Reduced stack offset like projects
+                const top = 100 + index * 10;
+                const zIndex = index + 1;
+                const displayImages = images ? images.slice(0, 3) : [];
+                const hasImages = displayImages.length > 0;
 
-                    // Ensure we handle creating a nice grid layout for images
-                    // If no images provided, we'll need a fallback or conditional render
-                    const displayImages =
-                        images && images.length > 0 ? images.slice(0, 3) : [];
-                    const hasImages = displayImages.length > 0;
-
-                    return (
-                        <div
-                            style={`top: ${top}px;`}
-                            class="group sticky overflow-hidden rounded-3xl border border-white/10 bg-neutral-900/80 backdrop-blur-md transition-all duration-500 hover:border-white/20 hover:shadow-2xl hover:shadow-primary/5"
-                        >
-                            <div class="grid gap-0 md:grid-cols-2">
-                                {/* Content Side */}
-                                <div class="flex flex-col justify-between p-8 md:p-10">
-                                    <div>
-                                        <div class="mb-4 flex flex-wrap items-center gap-3">
-                                            <h3 class="font-serif text-3xl font-bold text-white transition-colors duration-300 group-hover:text-primary">
-                                                {name}
-                                            </h3>
-                                            {rank && (
-                                                <span class="text-primary-300 rounded-full border border-primary/30 bg-primary/20 px-3 py-1 text-xs font-semibold text-primary">
-                                                    {rank}
-                                                </span>
-                                            )}
-                                        </div>
-
-                                        <div class="mb-6 flex items-center gap-2 text-sm text-neutral-400">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                class="h-4 w-4"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke="currentColor"
-                                            >
-                                                <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"
-                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                                />
-                                                <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"
-                                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                                />
-                                            </svg>
-                                            {location}
-                                        </div>
-
-                                        <p class="mb-8 text-lg leading-relaxed text-neutral-300">
-                                            {summary}
-                                        </p>
-                                    </div>
-
-                                    <div class="mt-auto flex flex-wrap gap-4">
-                                        {preview && (
-                                            <a
-                                                href={preview}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition-transform hover:scale-105 active:scale-95"
-                                            >
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-4 w-4"
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                >
-                                                    <path
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                                                    />
-                                                    <path
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                                                    />
-                                                </svg>
-                                                Live Demo
-                                            </a>
-                                        )}
-                                        {link && (
-                                            <a
-                                                href={link}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10 active:scale-95"
-                                            >
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-4 w-4"
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                >
-                                                    <path
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                                                    />
-                                                </svg>
-                                                View Code
-                                            </a>
+                return (
+                    <div
+                        style={`top: ${top}px; z-index: ${zIndex};`}
+                        class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black transition-all duration-500 ease-out"
+                    >
+                        <div class="bg-difu relative z-[1] flex flex-col rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid sm:min-h-0 sm:grid-cols-2 sm:grid-rows-1">
+                            {/* Content Side */}
+                            <div class="flex shrink-0 flex-col px-6 pt-10 pb-6 sm:justify-between sm:py-12">
+                                <div>
+                                    <div class="mb-4 flex flex-wrap items-center gap-3">
+                                        <h3 class="font-serif text-3xl font-medium text-primary">
+                                            {name}
+                                        </h3>
+                                        {rank && (
+                                            <span class="text-primary-300 rounded-full border border-primary/30 bg-primary/20 px-3 py-1 text-xs font-semibold text-primary">
+                                                {rank}
+                                            </span>
                                         )}
                                     </div>
+
+                                    <div class="mb-4 flex items-center gap-2 text-sm text-neutral-400">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                            />
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                            />
+                                        </svg>
+                                        {location}
+                                    </div>
+
+                                    <p class="text-base text-neutral">
+                                        {summary}
+                                    </p>
                                 </div>
 
-                                {/* Image Grid Side */}
-                                {hasImages && (
-                                    <div class="relative flex min-h-[300px] flex-col justify-center gap-4 bg-black/20 p-4 md:p-6">
-                                        <div
-                                            class={`grid h-full w-full gap-3 ${displayImages.length === 1 ? "grid-cols-1" : displayImages.length === 2 ? "grid-rows-2 md:grid-cols-2 md:grid-rows-1" : "grid-cols-2 grid-rows-2"}`}
+                                <div class="flex gap-5 pt-8 text-white">
+                                    {link && (
+                                        <a
+                                            href={link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="flex items-center gap-2 rounded-lg bg-white/5 px-4 py-2 text-sm transition-colors hover:bg-white/10 active:scale-95 sm:bg-transparent sm:p-0 sm:text-base sm:after:relative sm:after:bottom-[-5px] sm:after:content-[url(/external.svg)] sm:hover:bg-transparent sm:hover:underline"
                                         >
-                                            {displayImages.map(
-                                                (img, imgIndex) => {
-                                                    // Layout Logic:
-                                                    // 1 image: full
-                                                    // 2 images: side by side
-                                                    // 3 images: first one full height on left, other two stacked on right? Or grid-cols-2 with first span-2?
+                                            <span class="sm:hidden">
+                                                <img
+                                                    src="/external.svg"
+                                                    alt=""
+                                                    class="h-4 w-4 invert"
+                                                />
+                                            </span>
+                                            View Code
+                                        </a>
+                                    )}
+                                    {preview && (
+                                        <a
+                                            href={preview}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="flex items-center gap-2 rounded-lg bg-white/5 px-4 py-2 text-sm transition-colors hover:bg-white/10 active:scale-95 sm:bg-transparent sm:p-0 sm:text-base sm:after:relative sm:after:bottom-[-5px] sm:after:content-[url(/external.svg)] sm:hover:bg-transparent sm:hover:underline"
+                                        >
+                                            <span class="sm:hidden">
+                                                <img
+                                                    src="/external.svg"
+                                                    alt=""
+                                                    class="h-4 w-4 invert"
+                                                />
+                                            </span>
+                                            Live Demo
+                                        </a>
+                                    )}
+                                </div>
+                            </div>
 
-                                                    // Let's do a smart grid
-                                                    // If 3 images:
-                                                    // Img 1: row-span-2 (tall on left)
-                                                    // Img 2 & 3: col-span-1 (stacked on right)
+                            {/* Image Side */}
+                            <div class="flex h-[300px] w-full items-end justify-end overflow-hidden p-4 sm:h-auto sm:items-center sm:justify-center">
+                                {hasImages && (
+                                    <div
+                                        class={`grid h-full w-full gap-2 ${displayImages.length === 1 ? "grid-cols-1" : displayImages.length === 2 ? "grid-cols-2" : "grid-cols-2 grid-rows-2"}`}
+                                    >
+                                        {displayImages.map((img, imgIndex) => {
+                                            let gridClass =
+                                                "overflow-hidden rounded-xl shadow-lg";
 
-                                                    let gridClass =
-                                                        "overflow-hidden rounded-xl border border-white/5 bg-neutral-800";
+                                            // Logic for 3 images: One main, two stacked
+                                            if (displayImages.length === 3) {
+                                                if (imgIndex === 0)
+                                                    gridClass +=
+                                                        " row-span-2 md:col-span-1";
+                                                else gridClass += " col-span-1";
+                                            } else {
+                                                gridClass += " col-span-1"; // Just fill available space
+                                            }
 
-                                                    if (
-                                                        displayImages.length ===
-                                                        3
-                                                    ) {
-                                                        if (imgIndex === 0)
-                                                            gridClass +=
-                                                                " row-span-2 md:col-span-1";
-                                                        else
-                                                            gridClass +=
-                                                                " col-span-1";
-                                                    } else {
-                                                        gridClass +=
-                                                            " col-span-1";
-                                                    }
-
-                                                    return (
-                                                        <div class={gridClass}>
-                                                            <Image
-                                                                src={img}
-                                                                alt={`${name} screenshot ${imgIndex + 1}`}
-                                                                width={800}
-                                                                height={600}
-                                                                class="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
-                                                            />
-                                                        </div>
-                                                    );
-                                                },
-                                            )}
-                                        </div>
+                                            return (
+                                                <div class={gridClass}>
+                                                    <Image
+                                                        src={img}
+                                                        alt={`${name} screenshot ${imgIndex + 1}`}
+                                                        width={500}
+                                                        height={300}
+                                                        class="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                                                    />
+                                                </div>
+                                            );
+                                        })}
                                     </div>
                                 )}
                             </div>
                         </div>
-                    );
-                },
-            )
-        }
-    </div>
+                    </div>
+                );
+            },
+        )
+    }
 </Section>

@@ -1,14 +1,8 @@
 import { readFileSync } from "node:fs";
-const html = [
-  "index.html",
-  "projects/unipirate/index.html",
-  "projects/moneo/index.html",
-  "projects/nox/index.html",
-]
-  .map((path) =>
-    readFileSync(new URL(`../dist/${path}`, import.meta.url), "utf8"),
-  )
-  .join("");
+const html = readFileSync(
+  new URL("../dist/index.html", import.meta.url),
+  "utf8",
+);
 const urls = [
   ...new Set(
     [...html.matchAll(/<a\b[^>]*href="(https:\/\/[^" ]+)"/g)].map(

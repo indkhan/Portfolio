@@ -1,0 +1,125 @@
+{
+  "about": "Silent, illustrative workflow animations; not actual product screenshots or recordings",
+  "resolution": "960x540",
+  "frame_rate": 15,
+  "project_videos": 9,
+  "hackathon_videos": 5,
+  "files": {
+    "README.md": {
+      "sha256": "75706f7d9c5dd860c935f3d6f57152d7e188ea1841ab4ebde8cb5c41dcf24f1b",
+      "bytes": 577
+    },
+    "hackathons/mittelstand.mp4": {
+      "sha256": "e78d395c492533952a70dff482fd35e5198c25b479d7dd34f3cd8a7bfc18c872",
+      "bytes": 41900
+    },
+    "hackathons/servusai.mp4": {
+      "sha256": "38a17458e4d2f42b97b51e4f8cfac90434f09aa787bada54671b43cf305eb628",
+      "bytes": 41021
+    },
+    "hackathons/starthack.mp4": {
+      "sha256": "4bc8f6f4a9598317f638a0b95a36a898b56fe024835128c9f75c87c68d20c2ea",
+      "bytes": 40874
+    },
+    "hackathons/swisshacks.mp4": {
+      "sha256": "ba8c61f8690d084293bad0e606a563db7855eb1566dd12c30bba1bb3cfd6b037",
+      "bytes": 40309
+    },
+    "hackathons/techeurope.mp4": {
+      "sha256": "311bac07177fea66f382757b66363b4d1c697e56edf8d3e33b64e9b6eb41f920",
+      "bytes": 40983
+    },
+    "posters/dreamtransport.webp": {
+      "sha256": "00605288aff7fea5c26a3a4d0291568defd468232e6ba470f6f36558c8da032b",
+      "bytes": 32054
+    },
+    "posters/klebl.webp": {
+      "sha256": "b2f5ecee1e8613f2840337b7681179b6f948d40265bc7b7662a9a98734d711ec",
+      "bytes": 30706
+    },
+    "posters/mhack.webp": {
+      "sha256": "dbd68dd87922032ca0769ce19f521ef56afe0f6ff3e5a1500bfeb28b1613cb87",
+      "bytes": 32482
+    },
+    "posters/mittelstand.webp": {
+      "sha256": "0a7f91c8db63de2f14f69e0a1211cd27f7216d117fceafd9cd5a1aec3bc59750",
+      "bytes": 25896
+    },
+    "posters/moneo.webp": {
+      "sha256": "70b9c6c9c9d11797afe94334299668849196116966a633c57bdfdce333870054",
+      "bytes": 30598
+    },
+    "posters/nox.webp": {
+      "sha256": "4cf445b308eac669e56a5fa7afe09b8d86f5178060aa68163ddcb59c2dcf64a2",
+      "bytes": 31058
+    },
+    "posters/servusai.webp": {
+      "sha256": "ee536868c9b2b4d8a498d72598d9ae4ae49d1fe71fbde33eb454abe3f0864a5e",
+      "bytes": 27084
+    },
+    "posters/starthack.webp": {
+      "sha256": "b4fcfc2373763df4f86f1e62118d8c359421771c9378f71757afc18fb4b50e72",
+      "bytes": 26532
+    },
+    "posters/swisshacks.webp": {
+      "sha256": "4ddd9907ff8d35a1132f0ea1de0114edac26cc28f10cc6730230747be5fb762d",
+      "bytes": 26586
+    },
+    "posters/swissinsight.webp": {
+      "sha256": "8ab439e2bcdfd250590700ffdb5b940ab165a4460eccd1d3ea7c076a950c1dda",
+      "bytes": 32264
+    },
+    "posters/techeurope.webp": {
+      "sha256": "8ad08567974c36f5a0bbe0d34a1ea118ff4d614bf6450270cd91513b645c6c3e",
+      "bytes": 29310
+    },
+    "posters/unipirate.webp": {
+      "sha256": "f488d220e18ee3bb51d19b8660b1ce81b1f4cb63b4792286f4071a937a45b944",
+      "bytes": 32626
+    },
+    "posters/voice_oasis.webp": {
+      "sha256": "c63c3d4ffce5340598c9cbdf9c42831ce444363ec4e682aaa2c0c5040a6f8fa8",
+      "bytes": 30856
+    },
+    "posters/worldsim.webp": {
+      "sha256": "5fdada06ff34ab74f6c372f917bd0bfbe350ed44b54dd4014728ce1a86bd081d",
+      "bytes": 31822
+    },
+    "projects/dreamtransport.mp4": {
+      "sha256": "33fc00b5d420f086930cc6dabb120141ebde12ad015a141694cd3e024bd73391",
+      "bytes": 58880
+    },
+    "projects/klebl.mp4": {
+      "sha256": "a2c2b37e2b8760b2a5bd501f7450f8b84a01be9ce0b8e9eb3547e637e127ab5d",
+      "bytes": 50120
+    },
+    "projects/mhack.mp4": {
+      "sha256": "8a892f2e8661e2fb9a945b9aeb3d5d830b8104d5c4925c9a5aeb78666aafe0e5",
+      "bytes": 46922
+    },
+    "projects/moneo.mp4": {
+      "sha256": "d24a627ea4103797343e3fb4ceb2470b9f78b54f94123905e48eb9a95f25b1ff",
+      "bytes": 82708
+    },
+    "projects/nox.mp4": {
+      "sha256": "9bb7dfb2b61716fd89f42fdd9c5e7dda5b94edd20403d0c20f6183b528d0e8ea",
+      "bytes": 75035
+    },
+    "projects/swissinsight.mp4": {
+      "sha256": "23ebba2d771ad82761e60126cb9b4c84f28aad564a104b3a828e33906ce1464e",
+      "bytes": 67953
+    },
+    "projects/unipirate.mp4": {
+      "sha256": "c18fb23eb8f2ee35a3477fb2320f5044362d474eefa4305cab0d74f685b55304",
+      "bytes": 79945
+    },
+    "projects/voice_oasis.mp4": {
+      "sha256": "8248ae27387e8f67a97eed12cfefa6e17e9b7b45c725a7a7c3ae3d8ac05399a8",
+      "bytes": 179899
+    },
+    "projects/worldsim.mp4": {
+      "sha256": "3d74174c18c863c1272dbb0fb3b52c90ea617ff6f06cdf637585a73e154e9a71",
+      "bytes": 93934
+    }
+  }
+}

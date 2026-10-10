@@ -4,7 +4,7 @@ export const DATA = {
   email: "mgsukhan@gmail.com",
   location: "Saarbrücken, Germany",
   summary:
-    "I'm a Computer Science student and working Software & AI Engineer based in Saarbrücken. I like building where engineering meets real workflows: university applications, financial decisions, and assistants that keep people in control. Away from my own projects, you'll often find me building with a team at a hackathon.",
+    "I'm a Computer Science student at Saarland University and a Software & AI Engineer based in Saarbrücken. I enjoy turning ideas into useful software, learning by building, and solving tough problems with a team—whether at work or over a hackathon weekend.",
   skills: [
     "TypeScript",
     "JavaScript",
@@ -22,13 +22,12 @@ export const DATA = {
   ],
   work: [
     {
-      company: "Cyvalent / 3kb GmbH",
+      company: "Cyvalent",
       role: "Software & AI Engineer",
       dates: "Jul 2026 — Present",
       note: "Working student",
       description:
-        "AI-assisted evidence onboarding, document ingestion, and citation-backed results with editable review.",
-      stack: "Next.js · TypeScript · PostgreSQL",
+        "Contributing to software development and collaborating with the team on day-to-day engineering work.",
       initials: "Cy",
     },
     {
@@ -37,7 +36,7 @@ export const DATA = {
       dates: "Sep 2025 — Jun 2026",
       note: "Working student",
       description:
-        "Natural-language agents, scheduled and event-driven workflows, document processing, and Flutter applications.",
+        "Built automation across 3 areas: AI agents, scheduled and event-driven workflows, and document processing. Developed backend APIs and Flutter features for a production application.",
       stack: "AI agents · Automation · Flutter",
       initials: "PCC",
     },
@@ -47,7 +46,7 @@ export const DATA = {
       dates: "Jul — Aug 2025",
       note: "Working student",
       description:
-        "Built an AI-powered B2B sales MVP, connecting retrieval-augmented generation, backend APIs, and a React / Next.js interface.",
+        "Built an AI-powered B2B sales MVP from concept to production. Improved outbound sales by ~70% and operational efficiency by ~80%, with AI responses in under 3 seconds.",
       stack: "RAG · Backend APIs · React",
       initials: "LL",
     },
@@ -62,7 +61,6 @@ export const projects = [
       "A clearer path to German public universities. Rule-based eligibility, official sources, and an application workspace built for international students.",
     stack: ["Next.js", "Supabase", "Rule engine", "Applied AI"],
     status: "Public eligibility checker",
-    demoLabel: "Try the checker",
   },
   {
     ...PROJECT_MEDIA.moneo,
@@ -72,7 +70,6 @@ export const projects = [
       "A personal finance workspace that turns transaction imports into reviewed records, useful analysis, and plans you can explore with AI.",
     stack: ["Next.js", "TypeScript", "Supabase", "Finance APIs"],
     status: "Personal finance workspace",
-    demoLabel: "Open app · sign-in required",
   },
   {
     ...PROJECT_MEDIA.nox,

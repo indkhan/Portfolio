@@ -85,7 +85,7 @@ export default function HomePage() {
                   {job.role} <span>· {job.note}</span>
                 </p>
                 <p>{job.description}</p>
-                <p className="stack-text">{job.stack}</p>
+                {job.stack && <p className="stack-text">{job.stack}</p>}
               </div>
             </article>
           ))}
@@ -132,9 +132,16 @@ export default function HomePage() {
                   ))}
                 </div>
                 <div className="project-actions">
-                  <Button asChild>
-                    <a href={`/projects/${project.id}`}>Read case study ↗</a>
-                  </Button>
+                  {"demo" in project && (
+                    <Button asChild>
+                      <a
+                        href={project.demo}
+                        aria-label={`${project.title} live app`}
+                      >
+                        Live ↗
+                      </a>
+                    </Button>
+                  )}
                   <a
                     href={project.repository}
                     aria-label={`${project.title} source code`}
@@ -142,11 +149,6 @@ export default function HomePage() {
                     Code ↗
                   </a>
                 </div>
-                {"demo" in project && (
-                  <a className="demo-link" href={project.demo}>
-                    {project.demoLabel} ↗
-                  </a>
-                )}
               </div>
             </article>
           ))}
@@ -170,7 +172,24 @@ export default function HomePage() {
                 <p className="eyebrow">{project.label}</p>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
-                <a href={project.repository}>Explore {project.title} ↗</a>
+                <div className="project-actions">
+                  {"demo" in project && (
+                    <Button asChild>
+                      <a
+                        href={project.demo}
+                        aria-label={`${project.title} live app`}
+                      >
+                        Live ↗
+                      </a>
+                    </Button>
+                  )}
+                  <a
+                    href={project.repository}
+                    aria-label={`${project.title} source code`}
+                  >
+                    Code ↗
+                  </a>
+                </div>
               </div>
             </article>
           ))}

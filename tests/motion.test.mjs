@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import vm from "node:vm";
 
-test("motion respects visibility, reduced motion changes, and hidden tabs", () => {
+test("motion respects visibility and offers controls when mobile autoplay is blocked", async () => {
   const path = new URL("../src/scripts/motion.js", import.meta.url);
   assert.ok(existsSync(path), "The motion controller must exist");
   let intersect, preferenceChange, visibilityChange;
@@ -11,9 +11,13 @@ test("motion respects visibility, reduced motion changes, and hidden tabs", () =
     muted: false,
     plays: 0,
     pauses: 0,
+    controls: false,
+    blocked: false,
     play() {
       this.plays++;
-      return Promise.resolve();
+      return this.blocked
+        ? Promise.reject(new Error("Autoplay blocked"))
+        : Promise.resolve();
     },
     pause() {
       this.pauses++;
@@ -60,4 +64,13 @@ test("motion respects visibility, reduced motion changes, and hidden tabs", () =
   const count = video.plays;
   preferenceChange();
   assert.equal(video.plays, count, "hidden tabs never play");
+  document.hidden = false;
+  video.blocked = true;
+  visibilityChange();
+  await Promise.resolve();
+  assert.equal(
+    video.controls,
+    true,
+    "blocked autoplay offers a native play button",
+  );
 });

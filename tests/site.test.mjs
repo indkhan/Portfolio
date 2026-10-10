@@ -19,12 +19,7 @@ test("all original public assets are preserved byte-for-byte", () => {
   }
 });
 test("static pages contain content, accessible media and valid local links", () => {
-  for (const route of [
-    "index.html",
-    "projects/unipirate/index.html",
-    "projects/moneo/index.html",
-    "projects/nox/index.html",
-  ]) {
+  for (const route of ["index.html"]) {
     const file = new URL(`dist/${route}`, root);
     assert.ok(existsSync(file), `Missing server-rendered route: ${route}`);
     const html = readFileSync(file, "utf8");
@@ -58,6 +53,23 @@ test("static pages contain content, accessible media and valid local links", () 
     }
   }
   const home = readFileSync(new URL("dist/index.html", root), "utf8");
+  assert.doesNotMatch(home, /Read case study|href="\/projects\//);
+  for (const demo of [
+    "https://unipirate.vercel.app",
+    "https://moneo-mu.vercel.app",
+    "https://worldsim-swart.vercel.app",
+  ]) {
+    const link = [...home.matchAll(/<a\b[^>]*>[^<]*<\/a>/g)].find(([anchor]) =>
+      anchor.includes(`href="${demo}"`),
+    );
+    assert.ok(link, `Missing live link for ${demo}`);
+    assert.match(link[0], /class="[^"]*bg-primary/);
+    assert.match(link[0], />Live/);
+  }
+  assert.ok(
+    !existsSync(new URL("dist/projects", root)),
+    "No separate project pages are built",
+  );
   for (const folder of ["projects", "hackathons"]) {
     for (const file of readdirSync(
       new URL(`public/portfolio-media/${folder}`, root),

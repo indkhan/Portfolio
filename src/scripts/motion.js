@@ -5,7 +5,9 @@ function sync() {
   videos.forEach((video) => {
     video.muted = true;
     if (visible.has(video) && !preference.matches && !document.hidden) {
-      video.play().catch(() => {});
+      video.play().catch(() => {
+        video.controls = true;
+      });
     } else {
       video.pause();
     }

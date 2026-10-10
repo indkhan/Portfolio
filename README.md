@@ -23,11 +23,10 @@ pnpm preview --host 0.0.0.0 --port 4322
 ## Content and assets
 
 - `src/data/resume.ts`: experience, skills, projects, hackathons.
-- `src/data/case-studies.ts`: project architecture, trade-offs, evidence, limitations.
 - `src/data/project-media.ts`: supplied media manifest.
 - `src/components/HomePage.tsx`: server-rendered homepage.
-- `src/pages/projects/[slug].astro`: three static case studies.
-- `src/scripts/motion.js`: visible-only playback, reduced motion, hidden-tab pause.
+- Projects link directly to their live apps and source code; there are no separate project pages.
+- `src/scripts/motion.js`: visible-only playback, reduced motion, hidden-tab pause, and native controls when autoplay is blocked.
 - `public/portfolio-media`: 14 silent illustrated loops and posters; two actual public screenshots.
 - `public/photos`: optimized photo derivatives. All 25 original public assets retain their names and bytes.
 - `scripts/generate_portfolio_media.py`: supplied generator with optional photo integration.

@@ -1,144 +1,43 @@
-<div align="center">
+﻿# Usman Khan - Starfolio portfolio
 
-# 🚀 Usman Khan — Portfolio
+A recruiter-focused portfolio built from the official MIT-licensed Starfolio foundation: Astro, Tailwind CSS, Outfit / Geist Mono, shadcn buttons and badges, and the achievement timeline. Pages render as static HTML; React components render during the build and do not hydrate in the browser.
 
-**AI & Full-Stack Engineer**
+## Development and verification
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-blue?style=for-the-badge)](https://portfolio-ten-sooty-60.vercel.app/)
-[![GitHub](https://img.shields.io/badge/GitHub-indkhan-181717?style=for-the-badge&logo=github)](https://github.com/indkhan)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/indkhan)
+Requires Node 22.12+ and pnpm 10.18.2.
 
-<br />
-
-*A modern, responsive portfolio built with Astro & Tailwind CSS*
-
-</div>
-
----
-
-## ✨ Features
-
-- ⚡ **Blazing Fast** — Built with [Astro](https://astro.build) for optimal performance and SEO
-- 🎨 **Modern Design** — Clean, minimal aesthetic with smooth animations and glassmorphism effects
-- 📱 **Fully Responsive** — Optimized for all screen sizes, from mobile to desktop
-- 🌙 **Dark Mode** — Elegant dark theme with carefully crafted color palette
-- 🔧 **Easy to Customize** — All content managed through a single config file
-- 🚀 **Deploy Ready** — One-click deploy to Vercel, Netlify, or any static host
-
----
-
-## 🛠️ Tech Stack
-
-| Technology | Purpose |
-|------------|---------|
-| [Astro](https://astro.build) | Static Site Generator |
-| [Tailwind CSS v4](https://tailwindcss.com) | Styling & Design System |
-| [TypeScript](https://www.typescriptlang.org) | Type Safety |
-| [Prettier](https://prettier.io) | Code Formatting |
-
----
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) (v18 or higher)
-- [pnpm](https://pnpm.io/) (recommended) or npm
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/indkhan/Portfolio.git
-
-# Navigate to the project
-cd Portfolio
-
-# Install dependencies
-pnpm install
-
-# Start the development server
+```sh
+pnpm install --frozen-lockfile
 pnpm dev
-```
-
-Open [http://localhost:4321](http://localhost:4321) in your browser to see the result.
-
-### Build for Production
-
-```bash
-# Create production build
+pnpm typecheck
+pnpm lint
+pnpm format:check
 pnpm build
-
-# Preview the production build locally
-pnpm preview
+pnpm test
+node scripts/check-links.mjs
+pnpm preview --host 0.0.0.0 --port 4322
 ```
 
----
+`lint` runs Astro/TypeScript diagnostics. Formatting is checked separately with Prettier. Tests require a fresh build and cover static routes, media and local links, original asset hashes, Unicode copy, and video playback decisions.
 
-## 📁 Project Structure
+## Content and assets
 
-```
-Portfolio/
-├── public/              # Static assets (images, icons, etc.)
-├── src/
-│   ├── components/      # Reusable Astro components
-│   ├── config/          # Site configuration & content
-│   ├── layouts/         # Page layouts
-│   ├── pages/           # Route pages
-│   ├── styles/          # Global styles
-│   └── types/           # TypeScript type definitions
-├── astro.config.mjs     # Astro configuration
-├── tailwind.config.js   # Tailwind CSS configuration
-└── tsconfig.json        # TypeScript configuration
-```
+- `src/data/resume.ts`: experience, skills, projects, hackathons.
+- `src/data/case-studies.ts`: project architecture, trade-offs, evidence, limitations.
+- `src/data/project-media.ts`: supplied media manifest.
+- `src/components/HomePage.tsx`: server-rendered homepage.
+- `src/pages/projects/[slug].astro`: three static case studies.
+- `src/scripts/motion.js`: visible-only playback, reduced motion, hidden-tab pause.
+- `public/portfolio-media`: 14 silent illustrated loops and posters; two actual public screenshots.
+- `public/photos`: optimized photo derivatives. All 25 original public assets retain their names and bytes.
+- `scripts/generate_portfolio_media.py`: supplied generator with optional photo integration.
 
----
+No CV, phone number, street address, or private finance records are published. Animations are illustrative; Moneo records are fictional. Hackathon ranks need owner confirmation before publication. Nox alpha and project limitations are explicit.
 
-## ⚙️ Customization
+## Review status
 
-All site content is managed in a single file: **`src/config/index.ts`**
+Work is isolated on `feat/starfolio-redesign`. No merge, push, or deployment was performed. See `docs/REDESIGN_REVIEW.md` for verification, provenance, screenshots, and remaining publication checks.
 
-### Personal Information
+## Attribution
 
-```typescript
-export const SITE_CONFIG: SiteConfig = {
-  title: "Your Name — Your Title",
-  author: "Your Name",
-  description: "Your description...",
-  // ... social links, navigation, etc.
-};
-```
-
-### Adding Projects
-
-```typescript
-projects: [
-  {
-    name: "Project Name",
-    summary: "Brief description of your project...",
-    linkPreview: "https://your-live-demo.com",  // Optional
-    linkSource: "https://github.com/your/repo", // Optional
-    image: "/project-image.png",
-  },
-  // ... more projects
-],
-```
-
-### Adding Experience
-
-```typescript
-experience: [
-  {
-    company: "Company Name",
-    position: "Your Role",
-    startDate: "Jan 2024",
-    endDate: "Present",
-    summary: [
-      "Achievement or responsibility #1",
-      "Achievement or responsibility #2",
-    ],
-  },
-],
-```
-
----
+Starfolio: https://github.com/webrating/starfolio, master commit `6d49318fee1fa9d5d48eba85f57e71c092983350`. Its MIT license is retained in `LICENSE.starfolio`. The original Portfolio history and assets are preserved. Starfolio components were adapted for flagship showcases and static rendering. The Cloudflare adapter and sample blog were omitted because this repository uses static hosting and has no real posts.

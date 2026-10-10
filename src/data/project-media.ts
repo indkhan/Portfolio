@@ -1,0 +1,133 @@
+/**
+ * Conceptual motion media for the Starfolio Portfolio redesign.
+ * These are illustrative workflow storyboards, NOT live screen recordings.
+ * All routes are static URLs under /public/portfolio-media/.
+ */
+export const PROJECT_MEDIA = {
+  unipirate: {
+    title: "UniPirate",
+    tier: "flagship",
+    video: "/portfolio-media/projects/unipirate.mp4",
+    poster: "/portfolio-media/posters/unipirate.webp",
+    alt: "Illustrated UniPirate flow: student profile, source-backed eligibility evidence, and application planning",
+    repository: "https://github.com/indkhan/unipirate",
+    demo: "https://unipirate.vercel.app",
+  },
+  moneo: {
+    title: "Moneo",
+    tier: "flagship",
+    video: "/portfolio-media/projects/moneo.mp4",
+    poster: "/portfolio-media/posters/moneo.webp",
+    alt: "Illustrated Moneo flow: fictional bank statement import, spending analysis and scenario planning",
+    repository: "https://github.com/indkhan/Moneo",
+    demo: "https://moneo-mu.vercel.app",
+  },
+  nox: {
+    title: "Nox",
+    tier: "featured",
+    video: "/portfolio-media/projects/nox.mp4",
+    poster: "/portfolio-media/posters/nox.webp",
+    alt: "Illustration of Nox Notion assistant proposing changes for approval and tracking actions",
+    repository: "https://github.com/indkhan/Nox",
+  },
+  worldsim: {
+    title: "WorldSim",
+    tier: "secondary",
+    video: "/portfolio-media/projects/worldsim.mp4",
+    poster: "/portfolio-media/posters/worldsim.webp",
+    alt: "Illustration of synthetic global event simulation and timeline comparison, not a real-world forecast",
+    repository: "https://github.com/indkhan/WorldSim",
+    demo: "https://worldsim-swart.vercel.app",
+  },
+  dreamtransport: {
+    title: "DreamTransport",
+    tier: "secondary",
+    video: "/portfolio-media/projects/dreamtransport.mp4",
+    poster: "/portfolio-media/posters/dreamtransport.webp",
+    alt: "Schematic illustration of a transport network being optimized for transit hubs",
+    repository: "https://github.com/indkhan/DreamTransport",
+  },
+  voice_oasis: {
+    title: "Voice Oasis",
+    tier: "secondary",
+    video: "/portfolio-media/projects/voice_oasis.mp4",
+    poster: "/portfolio-media/posters/voice_oasis.webp",
+    alt: "Illustrated audio processing, speaker recognition, and conversational memory workflow",
+    repository: "https://github.com/indkhan/Voice_Oasis",
+  },
+  klebl: {
+    title: "Klebl AI",
+    tier: "hackathon",
+    video: "/portfolio-media/projects/klebl.mp4",
+    poster: "/portfolio-media/posters/klebl.webp",
+    alt: "Illustration of blueprint analysis and structured construction document extraction",
+    repository: "https://github.com/indkhan/Klebl",
+  },
+  mhack: {
+    title: "MHack / UdS Operator",
+    tier: "hackathon",
+    video: "/portfolio-media/projects/mhack.mp4",
+    poster: "/portfolio-media/posters/mhack.webp",
+    alt: "Illustrated desktop AI assistant delegating tools to complete a task",
+    repository: "https://github.com/indkhan/MHack",
+  },
+  swissinsight: {
+    title: "SwissInsight",
+    tier: "hackathon",
+    video: "/portfolio-media/projects/swissinsight.mp4",
+    poster: "/portfolio-media/posters/swissinsight.webp",
+    alt: "Illustrated natural-language query, SPARQL knowledge graph, and funding visualization",
+    repository: "https://github.com/indkhan/innosuisse-startupticker",
+  },
+} as const;
+
+export const HACKATHON_MEDIA = {
+  mittelstand: {
+    event: "Mittelstand Hackathon",
+    award: "1st Place",
+    project: "Klebl AI",
+    video: "/portfolio-media/hackathons/mittelstand.mp4",
+    poster: "/portfolio-media/posters/mittelstand.webp",
+    originalPhotos: [
+      "/mittelstadt.png",
+      "/mittelstand2.jpeg",
+      "/mittelstand3.jpeg",
+    ],
+  },
+  techeurope: {
+    event: "{Tech: Europe} AI Hackathon",
+    award: "3rd Place",
+    project: "MHack / UdS OP",
+    video: "/portfolio-media/hackathons/techeurope.mp4",
+    poster: "/portfolio-media/posters/techeurope.webp",
+    originalPhotos: ["/munichhack.jpeg"],
+  },
+  starthack: {
+    event: "START HACK 2025",
+    award: "3rd Place",
+    project: "Voice Oasis",
+    video: "/portfolio-media/hackathons/starthack.mp4",
+    poster: "/portfolio-media/posters/starthack.webp",
+    originalPhotos: ["/starthack.jpg", "/start_hack2.jpeg"],
+  },
+  swisshacks: {
+    event: "SwissHacks",
+    award: "2nd Place",
+    project: "SwissInsight",
+    video: "/portfolio-media/hackathons/swisshacks.mp4",
+    poster: "/portfolio-media/posters/swisshacks.webp",
+    originalPhotos: [
+      "/swisshacks1.jpeg",
+      "/swisshacks2.jpeg",
+      "/swisshacks3.gif",
+    ],
+  },
+  servusai: {
+    event: "Servus AI Summer",
+    award: "2nd Place",
+    project: "DreamTransport",
+    video: "/portfolio-media/hackathons/servusai.mp4",
+    poster: "/portfolio-media/posters/servusai.webp",
+    originalPhotos: ["/dream_transport.gif"],
+  },
+} as const;

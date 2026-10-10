@@ -1,0 +1,225 @@
+{
+  "date": "2026-10-10",
+  "dark": [
+    {
+      "url": "/",
+      "width": 1440,
+      "overflow": false,
+      "clipped": [],
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "url": "/projects/unipirate",
+      "width": 1440,
+      "overflow": false,
+      "clipped": [],
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "url": "/projects/moneo",
+      "width": 1440,
+      "overflow": false,
+      "clipped": [],
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "url": "/projects/nox",
+      "width": 1440,
+      "overflow": false,
+      "clipped": [],
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "url": "/",
+      "width": 768,
+      "overflow": false,
+      "clipped": [],
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "url": "/projects/unipirate",
+      "width": 768,
+      "overflow": false,
+      "clipped": [],
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "url": "/projects/moneo",
+      "width": 768,
+      "overflow": false,
+      "clipped": [],
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "url": "/projects/nox",
+      "width": 768,
+      "overflow": false,
+      "clipped": [],
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "url": "/",
+      "width": 390,
+      "overflow": false,
+      "clipped": [],
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "url": "/projects/unipirate",
+      "width": 390,
+      "overflow": false,
+      "clipped": [],
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "url": "/projects/moneo",
+      "width": 390,
+      "overflow": false,
+      "clipped": [],
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "url": "/projects/nox",
+      "width": 390,
+      "overflow": false,
+      "clipped": [],
+      "brokenImages": [],
+      "violations": []
+    }
+  ],
+  "light": [
+    {
+      "route": "/",
+      "width": 1440,
+      "dark": false,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "route": "/projects/unipirate",
+      "width": 1440,
+      "dark": false,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "route": "/projects/moneo",
+      "width": 1440,
+      "dark": false,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "route": "/projects/nox",
+      "width": 1440,
+      "dark": false,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "dark": false,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "route": "/projects/unipirate",
+      "width": 768,
+      "dark": false,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "route": "/projects/moneo",
+      "width": 768,
+      "dark": false,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "route": "/projects/nox",
+      "width": 768,
+      "dark": false,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "dark": false,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "route": "/projects/unipirate",
+      "width": 390,
+      "dark": false,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "route": "/projects/moneo",
+      "width": 390,
+      "dark": false,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "route": "/projects/nox",
+      "width": 390,
+      "dark": false,
+      "overflow": false,
+      "violations": []
+    }
+  ],
+  "screenshots": [
+    {
+      "width": 1440,
+      "path": "/",
+      "url": "http://localhost:4322/",
+      "screenshotPath": "C:\\Users\\mgsuk\\.t3\\userdata\\browser-artifacts\\browser-screenshot-localhost-mv2n8d18-77158353.png"
+    },
+    {
+      "width": 1440,
+      "path": "/projects/unipirate",
+      "url": "http://localhost:4322/projects/unipirate",
+      "screenshotPath": "C:\\Users\\mgsuk\\.t3\\userdata\\browser-artifacts\\browser-screenshot-localhost-mv2n8d9f-596f92a4.png"
+    },
+    {
+      "width": 1440,
+      "path": "/projects/moneo",
+      "url": "http://localhost:4322/projects/moneo",
+      "screenshotPath": "C:\\Users\\mgsuk\\.t3\\userdata\\browser-artifacts\\browser-screenshot-localhost-mv2n8dgc-9612e6b9.png"
+    },
+    {
+      "width": 1440,
+      "path": "/projects/nox",
+      "url": "http://localhost:4322/projects/nox",
+      "screenshotPath": "C:\\Users\\mgsuk\\.t3\\userdata\\browser-artifacts\\browser-screenshot-localhost-mv2n8dok-306ba960.png"
+    },
+    {
+      "width": 768,
+      "path": "/",
+      "url": "http://localhost:4322/",
+      "screenshotPath": "C:\\Users\\mgsuk\\.t3\\userdata\\browser-artifacts\\browser-screenshot-localhost-mv2n8e2d-0b27a99d.png"
+    },
+    {
+      "width": 390,
+      "path": "/",
+      "url": "http://localhost:4322/",
+      "screenshotPath": "C:\\Users\\mgsuk\\.t3\\userdata\\browser-artifacts\\browser-screenshot-localhost-mv2n8eru-2720dc98.png"
+    }
+  ]
+}

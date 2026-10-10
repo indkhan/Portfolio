@@ -1,47 +1,108 @@
 ---
-import Header from "@components/Header.astro";
-import "@fontsource/be-vietnam-pro";
-import "@fontsource-variable/gabarito";
-import { SITE_CONFIG } from "@config";
-import Footer from "@components/Footer.astro";
-
+import "../styles/global.css";
+import "../styles/portfolio.css";
+interface Props {
+  title?: string;
+  description?: string;
+}
 const {
-  title,
-  description,
-  siteLogo,
-  navLinks,
-  lang,
-  author,
-  socialLinks,
-  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
-} = SITE_CONFIG;
+  title = "Usman Khan — Software Engineer",
+  description = "Computer Science student at Saarland University. Full-stack products, backend engineering, and applied AI with people in control.",
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang={lang} class="scroll-pt-16 scroll-smooth">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content={description} />
-    <meta name="author" content={author} />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalURL} />
-
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
+    <meta charset="UTF-8" /><meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>{title}</title><meta name="description" content={description} />
+    <link rel="canonical" href={canonical} /><link rel="icon" href="/uk.svg" />
+    <meta property="og:title" content={title} /><meta
+      property="og:description"
+      content={description}
+    />
+    <meta property="og:type" content="website" /><meta
+      property="og:url"
+      content={canonical}
+    />
+    <meta property="og:image" content={new URL("/usman-big.jpg", Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" /><meta
+      name="theme-color"
+      content="#fcfcfd"
+    />
+    <script is:inline>
+      try {
+        const t = localStorage.getItem("theme");
+        document.documentElement.classList.toggle(
+          "dark",
+          t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches,
+        );
+      } catch {}
+    </script>
   </head>
-  <body class="bg-black font-sans">
-    <Header siteLogo={siteLogo} navLinks={navLinks} />
-    <main class="mx-auto max-w-3xl px-5">
-      <slot />
-    </main>
-    <Footer author={author} socialLinks={socialLinks} />
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header class="site-header shell">
+      <a class="wordmark" href="/" aria-label="Usman Khan home"
+        >uk<span>.</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="/#projects">Projects</a><a href="/#experience">Experience</a><a
+          href="/#hackathons">Hackathons</a
+        ><a href="/#contact">Contact</a>
+      </nav>
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Switch to dark mode"
+        aria-pressed="false"
+        title="Change color theme"><span aria-hidden="true">◐</span></button
+      >
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer shell">
+      <span>© {new Date().getFullYear()} Usman Khan</span><a
+        href="https://github.com/webrating/starfolio">Built on Starfolio ↗</a
+      ><a href="#main">Back to top ↑</a>
+    </footer>
+    <script>
+      import "../scripts/motion.js";
+      const button = document.querySelector<HTMLButtonElement>(".theme-toggle");
+      const update = () => {
+        const dark = document.documentElement.classList.contains("dark");
+        button?.setAttribute("aria-pressed", String(dark));
+        button?.setAttribute(
+          "aria-label",
+          `Switch to ${dark ? "light" : "dark"} mode`,
+        );
+      };
+      update();
+      button?.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        try {
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark")
+              ? "dark"
+              : "light",
+          );
+        } catch {}
+        update();
+      });
+      matchMedia("(prefers-color-scheme: dark)").addEventListener(
+        "change",
+        (event) => {
+          try {
+            if (!localStorage.getItem("theme"))
+              document.documentElement.classList.toggle("dark", event.matches);
+          } catch {}
+          update();
+        },
+      );
+    </script>
   </body>
 </html>

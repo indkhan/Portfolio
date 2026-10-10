@@ -1,0 +1,8 @@
+dist
+node_modules
+.astro
+pnpm-lock.yaml
+public
+docs/PORTFOLIO_CONTENT_AND_LAYOUT.md
+docs/MEDIA_USAGE_AND_PROVENANCE.md
+docs/PROJECT_CASE_STUDIES.md

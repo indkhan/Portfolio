@@ -22,6 +22,15 @@ export const PROJECT_MEDIA = {
     repository: "https://github.com/indkhan/Moneo",
     demo: "https://moneo-mu.vercel.app",
   },
+  allrandom: {
+    title: "allrandom",
+    tier: "flagship",
+    video: "/portfolio-media/projects/allrandom.mp4",
+    poster: "/portfolio-media/posters/allrandom.webp",
+    alt: "Illustration of the allrandom desktop toolbox with Squeeze, Compress and Merge tools",
+    repository: "https://github.com/indkhan/allrandom",
+    demo: "https://github.com/indkhan/allrandom/releases/latest",
+  },
   nox: {
     title: "Nox",
     tier: "featured",

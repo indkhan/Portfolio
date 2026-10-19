@@ -54,15 +54,6 @@ export const DATA = {
 };
 export const projects = [
   {
-    ...PROJECT_MEDIA.unipirate,
-    id: "unipirate",
-    kicker: "From uncertainty to a next step",
-    description:
-      "A clearer path to German public universities. Rule-based eligibility, official sources, and an application workspace built for international students.",
-    stack: ["Next.js", "Supabase", "Rule engine", "Applied AI"],
-    status: "Public eligibility checker",
-  },
-  {
     ...PROJECT_MEDIA.moneo,
     id: "moneo",
     kicker: "Make the numbers make sense",
@@ -72,6 +63,15 @@ export const projects = [
     status: "Personal finance workspace",
   },
   {
+    ...PROJECT_MEDIA.allrandom,
+    id: "allrandom",
+    kicker: "Small tools, one app",
+    description:
+      "A small desktop toolbox for everyday file chores: compress video with bundled ffmpeg, zip files and folders, and merge PDFs and images into one PDF.",
+    stack: ["Tauri", "Rust", "ffmpeg", "Desktop"],
+    status: "Desktop app · Windows, macOS, Linux",
+  },
+  {
     ...PROJECT_MEDIA.nox,
     id: "nox",
     kicker: "An assistant. With a paper trail.",
@@ -79,6 +79,15 @@ export const projects = [
       "A local-first Notion assistant using Codex and Notion MCP. Propose changes, approve the plan, and follow each action as it happens.",
     stack: ["Chrome extension", "Codex", "Notion MCP"],
     status: "v0.1.0 · Alpha",
+  },
+  {
+    ...PROJECT_MEDIA.unipirate,
+    id: "unipirate",
+    kicker: "From uncertainty to a next step",
+    description:
+      "A clearer path to German public universities. Rule-based eligibility, official sources, and an application workspace built for international students.",
+    stack: ["Next.js", "Supabase", "Rule engine", "Applied AI"],
+    status: "Public eligibility checker",
   },
 ] as const;
 export const secondary = [

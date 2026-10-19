@@ -65,9 +65,9 @@ export const projects = [
   {
     ...PROJECT_MEDIA.allrandom,
     id: "allrandom",
-    kicker: "Small tools, one app",
+    kicker: "Small tools. One quick app.",
     description:
-      "A small desktop toolbox for everyday file chores: compress video with bundled ffmpeg, zip files and folders, and merge PDFs and images into one PDF.",
+      "A fast, no-nonsense desktop toolbox for the file chores you do every week. Squeeze videos down to a target size with bundled ffmpeg, zip files and folders in one click, or merge PDFs and images into a single PDF in any order. Native installers for Windows, macOS and Linux, with one-click self-updates.",
     stack: ["Tauri", "Rust", "ffmpeg", "Desktop"],
     status: "Desktop app · Windows, macOS, Linux",
   },

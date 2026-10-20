@@ -58,7 +58,7 @@ export const projects = [
     id: "allrandom",
     kicker: "Small tools. One quick app.",
     description:
-      "A fast, no-nonsense desktop toolbox for the file chores you do every week. Squeeze videos down to a target size with bundled ffmpeg, zip files and folders in one click, or merge PDFs and images into a single PDF in any order. Native installers for Windows, macOS and Linux, with one-click self-updates.",
+      "A free, open-source desktop toolbox for the file chores you do every week. Compress and trim videos, make GIFs, merge, split and shrink PDFs, zip folders, and convert audio and images. Everything runs offline with no uploads or accounts, and it updates itself in one click.",
     stack: ["Tauri", "Rust", "ffmpeg", "Desktop"],
     status: "Desktop app · Windows, macOS, Linux",
   },
@@ -91,12 +91,6 @@ export const projects = [
   },
 ] as const;
 export const secondary = [
-  {
-    ...PROJECT_MEDIA.ownkit,
-    description:
-      "A free, open-source desktop toolbox for the little file jobs you keep googling for: compress and trim videos, merge, split and shrink PDFs, convert audio and images. Everything runs offline, with no uploads or accounts.",
-    label: "Desktop app · Tauri + Rust",
-  },
   {
     ...PROJECT_MEDIA.worldsim,
     description:

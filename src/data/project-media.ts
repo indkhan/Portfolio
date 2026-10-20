@@ -29,7 +29,7 @@ export const PROJECT_MEDIA = {
     poster: "/portfolio-media/posters/allrandom.webp",
     alt: "Illustration of the allrandom desktop toolbox with Squeeze, Compress and Merge tools",
     repository: "https://github.com/indkhan/allrandom",
-    demo: "https://github.com/indkhan/allrandom/releases/latest",
+    demo: "https://indkhan.github.io/allrandom/",
   },
   nox: {
     title: "Nox",

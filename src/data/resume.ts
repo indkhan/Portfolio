@@ -54,15 +54,6 @@ export const DATA = {
 };
 export const projects = [
   {
-    ...PROJECT_MEDIA.moneo,
-    id: "moneo",
-    kicker: "Make the numbers make sense",
-    description:
-      "A personal finance workspace that turns transaction imports into reviewed records, useful analysis, and plans you can explore with AI.",
-    stack: ["Next.js", "TypeScript", "Supabase", "Finance APIs"],
-    status: "Personal finance workspace",
-  },
-  {
     ...PROJECT_MEDIA.allrandom,
     id: "allrandom",
     kicker: "Small tools. One quick app.",
@@ -70,6 +61,15 @@ export const projects = [
       "A fast, no-nonsense desktop toolbox for the file chores you do every week. Squeeze videos down to a target size with bundled ffmpeg, zip files and folders in one click, or merge PDFs and images into a single PDF in any order. Native installers for Windows, macOS and Linux, with one-click self-updates.",
     stack: ["Tauri", "Rust", "ffmpeg", "Desktop"],
     status: "Desktop app · Windows, macOS, Linux",
+  },
+  {
+    ...PROJECT_MEDIA.moneo,
+    id: "moneo",
+    kicker: "Make the numbers make sense",
+    description:
+      "A personal finance workspace that turns transaction imports into reviewed records, useful analysis, and plans you can explore with AI.",
+    stack: ["Next.js", "TypeScript", "Supabase", "Finance APIs"],
+    status: "Personal finance workspace",
   },
   {
     ...PROJECT_MEDIA.nox,

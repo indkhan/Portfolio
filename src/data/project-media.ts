@@ -39,6 +39,15 @@ export const PROJECT_MEDIA = {
     alt: "Illustration of Nox Notion assistant proposing changes for approval and tracking actions",
     repository: "https://github.com/indkhan/Nox",
   },
+  ownkit: {
+    title: "Ownkit",
+    tier: "secondary",
+    poster: "/portfolio-media/posters/ownkit.svg",
+    alt: "Ownkit logo with its tools: compress video, trim and GIF, merge PDFs, convert audio, resize images",
+    caption: "Free download for Windows, macOS and Linux",
+    repository: "https://github.com/indkhan/allrandom",
+    demo: "https://indkhan.github.io/allrandom/",
+  },
   worldsim: {
     title: "WorldSim",
     tier: "secondary",

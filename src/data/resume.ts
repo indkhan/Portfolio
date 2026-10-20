@@ -92,6 +92,12 @@ export const projects = [
 ] as const;
 export const secondary = [
   {
+    ...PROJECT_MEDIA.ownkit,
+    description:
+      "A free, open-source desktop toolbox for the little file jobs you keep googling for: compress and trim videos, merge, split and shrink PDFs, convert audio and images. Everything runs offline, with no uploads or accounts.",
+    label: "Desktop app · Tauri + Rust",
+  },
+  {
     ...PROJECT_MEDIA.worldsim,
     description:
       "Synthetic global scenarios and timeline comparisons. An experiment in simulation, explicitly not a forecast.",

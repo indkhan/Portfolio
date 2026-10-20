@@ -1,5 +1,5 @@
 interface Props {
-  video: string;
+  video?: string;
   poster: string;
   alt: string;
   caption?: string;
@@ -21,7 +21,7 @@ export default function Motion({
           width="960"
           height="540"
         />
-        <video
+        {video && <video
           data-motion
           muted
           loop
@@ -33,7 +33,7 @@ export default function Motion({
           height="540"
         >
           <source src={video} type="video/mp4" />
-        </video>
+        </video>}
       </div>
       <figcaption>{caption}</figcaption>
     </figure>

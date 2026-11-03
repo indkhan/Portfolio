@@ -27,7 +27,13 @@ export const DATA = {
       dates: "Jul 2026 — Present",
       note: "Working student",
       description:
-        "Contributing to software development and collaborating with the team on day-to-day engineering work.",
+        "First employee at Cyvalent, building RGX, an AI-powered cybersecurity platform. RGX helps organisations turn requirements like NIS2, DORA and ISO 27001 into risk assessments, policies and controls, with AI doing the structured work and people keeping the final decisions.",
+      responsibilities: [
+        "Build features across the full platform (Next.js), from UI to backend",
+        "Develop AI agents and the workflows that connect them",
+        "Work on integrations and internal tooling",
+        "Work directly with the founders, helping shape the product and engineering foundations from the start",
+      ],
       initials: "Cy",
     },
     {

@@ -85,6 +85,13 @@ export default function HomePage() {
                   {job.role} <span>· {job.note}</span>
                 </p>
                 <p>{job.description}</p>
+                {job.responsibilities && (
+                  <ul>
+                    {job.responsibilities.map((responsibility) => (
+                      <li key={responsibility}>{responsibility}</li>
+                    ))}
+                  </ul>
+                )}
                 {job.stack && <p className="stack-text">{job.stack}</p>}
               </div>
             </article>

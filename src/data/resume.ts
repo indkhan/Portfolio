@@ -54,24 +54,6 @@ export const DATA = {
 };
 export const projects = [
   {
-    ...PROJECT_MEDIA.fieldnote,
-    id: "fieldnote",
-    kicker: "From conversations to useful context",
-    description:
-      "Interview insights should not get lost between scattered notes and audio files. Fieldnote brings reusable questions, written answers, and microphone recordings into one local desktop notebook. Export sessions to Claude Code or Codex so real conversations can inform what you build, with no account or hosted notebook service.",
-    stack: ["Tauri", "TypeScript", "Rust", "SQLite"],
-    status: "Open-source desktop app | Windows, macOS, Linux",
-  },
-  {
-    ...PROJECT_MEDIA.allrandom,
-    id: "allrandom",
-    kicker: "Small tools. One quick app.",
-    description:
-      "A free, open-source desktop toolbox for the file chores you do every week. Compress and trim videos, make GIFs, merge, split and shrink PDFs, zip folders, and convert audio and images. Everything runs offline with no uploads or accounts, and it updates itself in one click.",
-    stack: ["Tauri", "Rust", "ffmpeg", "Desktop"],
-    status: "Desktop app · Windows, macOS, Linux",
-  },
-  {
     ...PROJECT_MEDIA.moneo,
     id: "moneo",
     kicker: "Make the numbers make sense",
@@ -88,6 +70,24 @@ export const projects = [
       "A local-first Notion assistant using Codex and Notion MCP. Propose changes, approve the plan, and follow each action as it happens.",
     stack: ["Chrome extension", "Codex", "Notion MCP"],
     status: "v0.1.0 · Alpha",
+  },
+  {
+    ...PROJECT_MEDIA.fieldnote,
+    id: "fieldnote",
+    kicker: "From conversations to useful context",
+    description:
+      "Interview insights should not get lost between scattered notes and audio files. Fieldnote brings reusable questions, written answers, and microphone recordings into one local desktop notebook. Export sessions to Claude Code or Codex so real conversations can inform what you build, with no account or hosted notebook service.",
+    stack: ["Tauri", "TypeScript", "Rust", "SQLite"],
+    status: "Open-source desktop app | Windows, macOS, Linux",
+  },
+  {
+    ...PROJECT_MEDIA.allrandom,
+    id: "allrandom",
+    kicker: "Small tools. One quick app.",
+    description:
+      "A free, open-source desktop toolbox for the file chores you do every week. Compress and trim videos, make GIFs, merge, split and shrink PDFs, zip folders, and convert audio and images. Everything runs offline with no uploads or accounts, and it updates itself in one click.",
+    stack: ["Tauri", "Rust", "ffmpeg", "Desktop"],
+    status: "Desktop app · Windows, macOS, Linux",
   },
   {
     ...PROJECT_MEDIA.unipirate,

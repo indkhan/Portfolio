@@ -4,6 +4,15 @@
  * All routes are static URLs under /public/portfolio-media/.
  */
 export const PROJECT_MEDIA = {
+  fieldnote: {
+    title: "Fieldnote",
+    tier: "flagship",
+    video: "/portfolio-media/projects/fieldnote.mp4",
+    poster: "/portfolio-media/posters/fieldnote.jpg",
+    alt: "Fieldnote desktop notebook for interview questions, written answers, recordings, and session exports",
+    repository: "https://github.com/indkhan/Fieldnote",
+    demo: "https://indkhan.github.io/Fieldnote/",
+  },
   unipirate: {
     title: "UniPirate",
     tier: "flagship",
@@ -19,7 +28,6 @@ export const PROJECT_MEDIA = {
     video: "/portfolio-media/projects/moneo.mp4",
     poster: "/portfolio-media/posters/moneo.webp",
     alt: "Illustrated Moneo flow: fictional bank statement import, spending analysis and scenario planning",
-    repository: "https://github.com/indkhan/Moneo",
     demo: "https://moneo-mu.vercel.app",
   },
   allrandom: {

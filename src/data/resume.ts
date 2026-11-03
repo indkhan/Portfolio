@@ -54,6 +54,15 @@ export const DATA = {
 };
 export const projects = [
   {
+    ...PROJECT_MEDIA.fieldnote,
+    id: "fieldnote",
+    kicker: "From conversations to useful context",
+    description:
+      "Interview insights should not get lost between scattered notes and audio files. Fieldnote brings reusable questions, written answers, and microphone recordings into one local desktop notebook. Export sessions to Claude Code or Codex so real conversations can inform what you build, with no account or hosted notebook service.",
+    stack: ["Tauri", "TypeScript", "Rust", "SQLite"],
+    status: "Open-source desktop app | Windows, macOS, Linux",
+  },
+  {
     ...PROJECT_MEDIA.allrandom,
     id: "allrandom",
     kicker: "Small tools. One quick app.",

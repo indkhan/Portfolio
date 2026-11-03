@@ -115,7 +115,9 @@ export default function HomePage() {
                   caption={
                     project.id === "moneo"
                       ? "Illustrated workflow · fictional financial data"
-                      : undefined
+                      : project.id === "fieldnote"
+                        ? "Fieldnote demo video"
+                        : undefined
                   }
                 />
               </div>
@@ -142,12 +144,17 @@ export default function HomePage() {
                       </a>
                     </Button>
                   )}
+                  {"repository" in project && (
                   <a
                     href={project.repository}
                     aria-label={`${project.title} source code`}
                   >
                     Code ↗
                   </a>
+                  )}
+                  {project.id === "fieldnote" && (
+                    <a href="/portfolio-media/projects/fieldnote.mp4">Watch video with sound</a>
+                  )}
                 </div>
               </div>
             </article>
